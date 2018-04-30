@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DankAlgorithms.Utilities
 {
     public static class RandomArray
     {
         /// <summary>
-        /// Gets an array of random integers between min and max, inclusive..
+        /// Gets an array of random integers between min and max, inclusive.
         /// </summary>
         /// <param name="numElements">The number elements.</param>
         /// <param name="min">The minimum.</param>
