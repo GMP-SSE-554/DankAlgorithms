@@ -1,7 +1,7 @@
 ﻿
 namespace DankAlgorithms.Algorithms
 {
-    public class EvenOddSort : ISort
+    public class EvenOddSort
     {
         /// <summary>
         /// Sorts the specified array.
