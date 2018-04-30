@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DankAlgorithms
@@ -8,14 +9,16 @@ namespace DankAlgorithms
     /// </summary>
     public partial class MainWindow : Window
     {
-        AlgorithmSet _algorithmSet = new AlgorithmSet();
+        public int DatasetSize { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = _algorithmSet;
+            AddDataSetSizes();
+            DataContext = this;
         }
 
         private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -42,13 +45,24 @@ namespace DankAlgorithms
                     break;
                 case "insertion":
                     break;
-                case "bubble":
+                case "evenodd":
                     break;
                 case "bogo":
                     break;
                 default:
                     break;
             }
+        }
+
+        private void AddDataSetSizes()
+        {
+            List<int> datasetSizes = new List<int>();
+            for (int i = 1; i < 9; i++)
+            {
+                datasetSizes.Add((int)System.Math.Pow(10, i));
+            }
+            DatasetSizes.ItemsSource = datasetSizes;
+            DatasetSizes.SelectedIndex = 0;
         }
     }
 }

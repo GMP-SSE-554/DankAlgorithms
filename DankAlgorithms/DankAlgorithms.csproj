@@ -54,7 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlgorithmSet.cs" />
     <Compile Include="Algorithms\BogoSort.cs" />
     <Compile Include="Algorithms\InsertionSort.cs" />
     <Compile Include="BindableBase.cs" />
