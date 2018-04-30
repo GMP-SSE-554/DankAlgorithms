@@ -1,13 +1,13 @@
 ﻿
 namespace DankAlgorithms.Algorithms
 {
-    public class EvenOddSort : ISort
+    public class EvenOddSort
     {
         /// <summary>
         /// Sorts the specified array.
         /// </summary>
         /// <param name="array">The array.</param>
-        public int[] Sort(int[] array)
+        public static int[] Sort(int[] array)
         {
             int i, j, tmp, size = array.Length;
             int[] copy = new int[size];

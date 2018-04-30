@@ -8,12 +8,11 @@ namespace AlgorithmTests
     [TestClass]
     public class BogoSortTest
     {
-        BogoSort bogo = new DankAlgorithms.Algorithms.BogoSort();
         [TestMethod]
         public void TestBogoAccuracy()
         {
             int[] testArray = { 2, 3, 5, 1, 4 };
-            int[] sortedArray = bogo.Sort(testArray);
+            int[] sortedArray = BogoSort.Sort(testArray);
             Assert.AreEqual(sortedArray[0], 1);
         }
     }
