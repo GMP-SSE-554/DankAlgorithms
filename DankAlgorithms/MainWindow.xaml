@@ -47,7 +47,7 @@
             <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">Not yet run</TextBlock>
             <ProgressBar Name ="insertionSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="1" ValueChanged="ProgressBar_ValueChanged_1"/>
 
-            <Button x:Name="evenodd Grid.Column="0" Grid.Row="2" Click="Button_Click">Even Odd Sort</Button>
+            <Button x:Name="evenodd" Grid.Column="0" Grid.Row="2" Click="Button_Click">Even Odd Sort</Button>
             <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Total Time:</Label>
             <Label x:Name="eoSortRuntime" Grid.Column="2" Grid.Row="2"/>
             <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
