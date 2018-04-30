@@ -7,41 +7,66 @@
         mc:Ignorable="d"
         Title="Dank Algorithms" Height="450" Width="800">
     <Grid>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="20,10,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Column="0" Grid.Row="0" Click="Button_Click">Quick Sort</Button>
+            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="qSortRuntime" Grid.Column="2" Grid.Row="0"/>
+            <Label Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock Grid.Column="4" Grid.Row="0" VerticalAlignment="Center">Running</TextBlock>
+            <ProgressBar Name ="quickSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" ValueChanged="ProgressBar_ValueChanged"/>
 
-        <Button Grid.Column="0" Grid.Row="0" Click="Button_Click">Quick Sort</Button>
-        <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">Input Size:</Label>
-        <TextBox Grid.Column="2" Grid.Row="0"></TextBox>
-        <Label Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right">Status:</Label>
-        <TextBlock Grid.Column="4" Grid.Row="0" VerticalAlignment="Center">Running</TextBlock>
+            <Button Grid.Column="0" Grid.Row="1">Insertion Sort</Button>
+            <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="iSortRuntime" Grid.Column="2" Grid.Row="1"/>
+            <Label Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">Not yet run</TextBlock>
+            <ProgressBar Name ="insertionSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="1" ValueChanged="ProgressBar_ValueChanged_1"/>
 
-        <Button Grid.Column="0" Grid.Row="1">Insertion Sort</Button>
-        <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right">Input Size:</Label>
-        <TextBox Grid.Column="2" Grid.Row="1"></TextBox>
-        <Label Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right">Status:</Label>
-        <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">Not yet run</TextBlock>
-
-        <Button Grid.Column="0" Grid.Row="2">Bubble Sort</Button>
-        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Input Size:</Label>
-        <TextBox Grid.Column="2" Grid.Row="2"></TextBox>
-        <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
-        <TextBlock Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Finished</TextBlock>
-        <ProgressBar Name ="quickSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" ValueChanged="ProgressBar_ValueChanged"/>
-        <ProgressBar Name ="insertionSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="1" ValueChanged="ProgressBar_ValueChanged_1"/>
-        <ProgressBar Name ="bubbleSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
+            <Button Grid.Column="0" Grid.Row="2" Click="OnEvenOddSort">Even Odd Sort</Button>
+            <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="eoSortRuntime" Grid.Column="2" Grid.Row="2"/>
+            <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Finished</TextBlock>
+            <ProgressBar Name ="bubbleSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
+        
+        </Grid>
+        <Grid Grid.Row="1" Margin="20,20,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" HorizontalAlignment="Center">Dataset Size Options</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Dataset Size: </TextBlock>
+            <ComboBox Grid.Column="1" Grid.Row="1" x:Name="DatasetSizes" VerticalContentAlignment="Center" SelectedItem="{Binding DatasetSize, Mode=OneWayToSource}"/>
+        </Grid>
     </Grid>
 </Window>
