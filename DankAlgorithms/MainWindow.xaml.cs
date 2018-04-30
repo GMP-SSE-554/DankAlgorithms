@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DankAlgorithms.Algorithms;
+using DankAlgorithms.Utilities;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -46,6 +48,7 @@ namespace DankAlgorithms
                 case "insertion":
                     break;
                 case "evenodd":
+                    EvenOddSort.Sort(RandomArray.GetRandomArray(DatasetSize, 0, 100));
                     break;
                 case "bogo":
                     break;
