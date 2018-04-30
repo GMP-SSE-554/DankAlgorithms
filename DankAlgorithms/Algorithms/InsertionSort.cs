@@ -1,14 +1,14 @@
 ﻿
 namespace DankAlgorithms.Algorithms
 {
-    class InsertionSort : ISort
+    public class InsertionSort
     {
         /// <summary>
         /// Sorts the specified input array.
         /// </summary>
         /// <param name="inputArray">The input array.</param>
         /// <returns></returns>
-        public int[] Sort(int[] inputArray)
+        public static int[] Sort(int[] inputArray)
         {
             //Create a copy of inputArray
             int[] copiedArray = new int[inputArray.Length];
