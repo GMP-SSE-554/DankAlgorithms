@@ -1,6 +1,7 @@
 ﻿using DankAlgorithms.Algorithms;
 using DankAlgorithms.Utilities;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -48,7 +49,11 @@ namespace DankAlgorithms
                 case "insertion":
                     break;
                 case "evenodd":
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();
                     EvenOddSort.Sort(RandomArray.GetRandomArray(DatasetSize, 0, 100));
+                    sw.Stop();
+                    eoSortRuntime.Content = sw.Elapsed;
                     break;
                 case "bogo":
                     break;
