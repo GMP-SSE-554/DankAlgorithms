@@ -6,7 +6,7 @@ using DankAlgorithms.Utilities;
 namespace AlgorithmTests
 {
     [TestClass]
-    public class InsertionSortTest
+    public class EvenOddSortTest
     {
         [TestMethod]
         public void TestAccuracy()
@@ -27,7 +27,7 @@ namespace AlgorithmTests
             testArray.CopyTo(copyArray, 0);
 
             int[] sortedArray = InsertionSort.Sort(testArray);
-            for(int i = 0; i < arraySize; i++)
+            for (int i = 0; i < arraySize; i++)
             {
                 Assert.IsTrue(testArray[i] == copyArray[i]);
             }
