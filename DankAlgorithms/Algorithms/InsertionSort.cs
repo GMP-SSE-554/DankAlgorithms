@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DankAlgorithms.Algorithms
 {
-    class InsertionSort
+    class InsertionSort : ISort
     {
+        /// <summary>
+        /// Sorts the specified input array.
+        /// </summary>
+        /// <param name="inputArray">The input array.</param>
+        /// <returns></returns>
         public int[] Sort(int[] inputArray)
         {
             //Create a copy of inputArray
