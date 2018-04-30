@@ -54,7 +54,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlgorithmSet.cs" />
+    <Compile Include="Algorithms\InsertionSort.cs" />
     <Compile Include="Algorithms\ISort.cs" />
+    <Compile Include="BindableBase.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Utilities\RandomArray.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
