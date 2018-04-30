@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace DankAlgorithms.Utilities
 {
-    class ArrayUtils
+    public class ArrayUtils
     {
         public static bool IsSorted(int[] array)
         {
-            bool sorted = true;
-            int n = 0;
-            while (sorted && n < array.Length)
+            for (int i = 1; i < array.Length; i++)
             {
-                sorted = array[n] < array[n + 1];
+                if (array[i - 1] > array[i])
+                {
+                    return false;
+                }
             }
-            return sorted;
+            return true;
         }
     }
 }
