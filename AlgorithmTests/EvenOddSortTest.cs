@@ -14,7 +14,7 @@ namespace AlgorithmTests
             int arraySize = 100;
             int[] testArray = RandomArray.GetRandomArray(arraySize, 0, 20000);
 
-            int[] sortedArray = InsertionSort.Sort(testArray);
+            int[] sortedArray = EvenOddSort.Sort(testArray);
             Assert.IsTrue(ArrayUtils.IsSorted(sortedArray));
         }
 
@@ -26,7 +26,7 @@ namespace AlgorithmTests
             int[] copyArray = new int[arraySize];
             testArray.CopyTo(copyArray, 0);
 
-            int[] sortedArray = InsertionSort.Sort(testArray);
+            int[] sortedArray = EvenOddSort.Sort(testArray);
             for (int i = 0; i < arraySize; i++)
             {
                 Assert.IsTrue(testArray[i] == copyArray[i]);
