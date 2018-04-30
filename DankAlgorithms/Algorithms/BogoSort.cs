@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DankAlgorithms.Algorithms
 {
-    public class BogoSort:ISort
+    public class BogoSort
     {
         /// <summary>
         /// Sorts an array of ints using bogo algorithm
