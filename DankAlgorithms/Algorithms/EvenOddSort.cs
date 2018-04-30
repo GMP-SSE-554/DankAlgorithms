@@ -28,7 +28,7 @@ namespace DankAlgorithms.Algorithms
                 }
                 else
                 {
-                    for (j = 1; j < size; j += 2)
+                    for (j = 1; j < size - 1; j += 2)
                     {
                         if (copy[j] > copy[j + 1])
                         {
