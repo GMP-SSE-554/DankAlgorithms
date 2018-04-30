@@ -20,6 +20,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         
         <Button Grid.Column="0" Grid.Row="0">Quick Sort</Button>
@@ -35,6 +37,18 @@
         <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">Not yet run</TextBlock>
 
         <Button Grid.Column="0" Grid.Row="2">Bubble Sort</Button>
+        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Input Size:</Label>
+        <TextBox Grid.Column="2" Grid.Row="2"></TextBox>
+        <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
+        <TextBlock Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Finished</TextBlock>
+
+        <Button Grid.Column="0" Grid.Row="2">Odd-Even Sort</Button>
+        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Input Size:</Label>
+        <TextBox Grid.Column="2" Grid.Row="2"></TextBox>
+        <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
+        <TextBlock Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Finished</TextBlock>
+
+        <Button Grid.Column="0" Grid.Row="2">Parallel Odd-Even Sort</Button>
         <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Input Size:</Label>
         <TextBox Grid.Column="2" Grid.Row="2"></TextBox>
         <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
