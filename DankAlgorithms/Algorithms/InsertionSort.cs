@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DankAlgorithms.Algorithms
 {
-    class InsertionSort
+    public static class InsertionSort
     {
-        public int[] Sort(int[] inputArray)
+        public static int[] Sort(int[] inputArray)
         {
             //Create a copy of inputArray
             int[] copiedArray = new int[inputArray.Length];
