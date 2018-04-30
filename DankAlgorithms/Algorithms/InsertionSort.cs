@@ -20,7 +20,7 @@ namespace DankAlgorithms.Algorithms
                 key = copiedArray[i];
                 j = i - 1;
 
-                while (j >=0 && copiedArray[j] > key)
+                while (j >= 0 && copiedArray[j] > key)
                 {
                     copiedArray[j + 1] = copiedArray[j];
                     j--;
@@ -30,5 +30,6 @@ namespace DankAlgorithms.Algorithms
             }
 
             return copiedArray;
+        }
     }
 }
