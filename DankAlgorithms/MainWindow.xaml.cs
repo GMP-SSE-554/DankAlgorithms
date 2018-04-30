@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace DankAlgorithms
 {
@@ -34,8 +35,20 @@ namespace DankAlgorithms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //test incrementing progress bar1
-            this.quickSortProg.Value += 5;
+            Button clickedButton = (Button)sender;
+            switch (clickedButton.Name)
+            {
+                case "quick":
+                    break;
+                case "insertion":
+                    break;
+                case "bubble":
+                    break;
+                case "bogo":
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

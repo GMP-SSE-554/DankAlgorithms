@@ -1,14 +1,17 @@
-﻿using DankAlgorithms.Utilities;
+﻿
+using DankAlgorithms.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DankAlgorithms.Algorithms
 {
-    class BogoSort
+    public class BogoSort:ISort
     {
+        /// <summary>
+        /// Sorts an array of ints using bogo algorithm
+        /// </summary>
+        /// <param name="inputArray"></param>
+        /// <returns></returns>
         public int[] Sort(int[] inputArray)
         {
             int[] temp = inputArray;

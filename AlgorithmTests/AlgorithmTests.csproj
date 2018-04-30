@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EvenOddSortTest.cs" />
+    <Compile Include="BogoSortTest.cs" />
     <Compile Include="InsertionSortTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

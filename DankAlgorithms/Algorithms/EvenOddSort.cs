@@ -7,20 +7,22 @@ namespace DankAlgorithms.Algorithms
         /// Sorts the specified array.
         /// </summary>
         /// <param name="array">The array.</param>
-        public void Sort(int[] array)
+        public int[] Sort(int[] array)
         {
             int i, j, tmp, size = array.Length;
+            int[] copy = new int[size];
+            array.CopyTo(copy, 0);
             for (i = 0; i < size; i++)
             {
                 if (i % 2 == 0)
                 {
                     for (j = 1; j < size; j += 2)
                     {
-                        if (array[j - 1] > array[j])
+                        if (copy[j - 1] > copy[j])
                         {
-                            tmp = array[j - 1];
-                            array[j - 1] = array[j];
-                            array[j] = tmp;
+                            tmp = copy[j - 1];
+                            copy[j - 1] = copy[j];
+                            copy[j] = tmp;
                         }
                     }
                 }
@@ -28,15 +30,16 @@ namespace DankAlgorithms.Algorithms
                 {
                     for (j = 1; j < size; j += 2)
                     {
-                        if (array[j] > array[j + 1])
+                        if (copy[j] > copy[j + 1])
                         {
-                            tmp = array[j + 1];
-                            array[j + 1] = array[j];
-                            array[j] = tmp;
+                            tmp = copy[j + 1];
+                            copy[j + 1] = copy[j];
+                            copy[j] = tmp;
                         }
                     }
                 }
             }
+            return copy;
         }
     }
 }
