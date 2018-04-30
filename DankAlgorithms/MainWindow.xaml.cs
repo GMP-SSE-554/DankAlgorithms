@@ -38,13 +38,20 @@ namespace DankAlgorithms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //test incrementing progress bar1
-            this.quickSortProg.Value += 5;
-        }
-
-        private void OnEvenOddSort(object sender, RoutedEventArgs e)
-        {
-            //_algorithmSet.ExecuteSort(((Button)sender).Name);
+            Button clickedButton = (Button)sender;
+            switch (clickedButton.Name)
+            {
+                case "quick":
+                    break;
+                case "insertion":
+                    break;
+                case "evenodd":
+                    break;
+                case "bogo":
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void AddDataSetSizes()

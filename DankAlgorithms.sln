@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DankAlgorithms", "DankAlgorithms\DankAlgorithms.csproj", "{27A5276C-51E5-4540-B310-E274D6433AFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmTests", "AlgorithmTests\AlgorithmTests.csproj", "{792548FF-F582-40FD-A393-8B7927DCF957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{27A5276C-51E5-4540-B310-E274D6433AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A5276C-51E5-4540-B310-E274D6433AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27A5276C-51E5-4540-B310-E274D6433AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792548FF-F582-40FD-A393-8B7927DCF957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792548FF-F582-40FD-A393-8B7927DCF957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792548FF-F582-40FD-A393-8B7927DCF957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792548FF-F582-40FD-A393-8B7927DCF957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -33,27 +33,33 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             
-            <Button Grid.Column="0" Grid.Row="0" Click="Button_Click">Quick Sort</Button>
+            <Button x:Name="quick" Grid.Column="0" Grid.Row="0" Click="Button_Click">Quick Sort</Button>
             <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">Total Time:</Label>
             <Label x:Name="qSortRuntime" Grid.Column="2" Grid.Row="0"/>
             <Label Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right">Status:</Label>
             <TextBlock Grid.Column="4" Grid.Row="0" VerticalAlignment="Center">Running</TextBlock>
             <ProgressBar Name ="quickSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" ValueChanged="ProgressBar_ValueChanged"/>
 
-            <Button Grid.Column="0" Grid.Row="1">Insertion Sort</Button>
+            <Button x:Name="insertion" Grid.Column="0" Grid.Row="1" Click="Button_Click">Insertion Sort</Button>
             <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right">Total Time:</Label>
             <Label x:Name="iSortRuntime" Grid.Column="2" Grid.Row="1"/>
             <Label Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right">Status:</Label>
             <TextBlock Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">Not yet run</TextBlock>
             <ProgressBar Name ="insertionSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="1" ValueChanged="ProgressBar_ValueChanged_1"/>
 
-            <Button Grid.Column="0" Grid.Row="2" Click="OnEvenOddSort">Even Odd Sort</Button>
+            <Button x:Name="evenodd Grid.Column="0" Grid.Row="2" Click="Button_Click">Even Odd Sort</Button>
             <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">Total Time:</Label>
             <Label x:Name="eoSortRuntime" Grid.Column="2" Grid.Row="2"/>
             <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
             <TextBlock Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Finished</TextBlock>
-            <ProgressBar Name ="bubbleSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
+            <ProgressBar Name ="evenOddSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
         
+            <Button Name="bogo" Grid.Column="0" Grid.Row="3" Click="Button_Click">Bogo Sort</Button>
+            <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right">Input Size:</Label>
+            <Label x:Name="bSortRuntime" Grid.Column="2" Grid.Row="2"/>
+            <Label Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock Grid.Column="4" Grid.Row="3" VerticalAlignment="Center">Finished</TextBlock>
+            <ProgressBar x:Name ="bogoSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="3" ValueChanged="ProgressBar_ValueChanged_2"/>
         </Grid>
         <Grid Grid.Row="1" Margin="20,20,20,20">
             <Grid.RowDefinitions>
