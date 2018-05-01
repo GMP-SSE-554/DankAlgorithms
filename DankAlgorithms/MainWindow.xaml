@@ -32,13 +32,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
-            <Button x:Name="quick" Grid.Column="0" Grid.Row="0" Click="Button_Click">Quick Sort</Button>
-            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">Total Time:</Label>
-            <Label x:Name="qSortRuntime" Grid.Column="2" Grid.Row="0"/>
-            <Label Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right">Status:</Label>
-            <TextBlock x:Name="qStatus" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center">Not yet run</TextBlock>
-            <ProgressBar x:Name="quickSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" ValueChanged="ProgressBar_ValueChanged"/>
 
             <Button x:Name="insertion" Grid.Column="0" Grid.Row="1" Click="Button_Click">Insertion Sort</Button>
             <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right">Total Time:</Label>
@@ -53,13 +46,6 @@
             <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">Status:</Label>
             <TextBlock x:Name="eoStatus" Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Not yet run</TextBlock>
             <ProgressBar x:Name="evenOddSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
-        
-            <Button x:Name="bogo" Grid.Column="0" Grid.Row="3" Click="Button_Click">Bogo Sort</Button>
-            <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right">Total Time:</Label>
-            <Label x:Name="bSortRuntime" Grid.Column="2" Grid.Row="2"/>
-            <Label Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right">Status:</Label>
-            <TextBlock x:Name="bStatus" Grid.Column="4" Grid.Row="3" VerticalAlignment="Center">Not yet run</TextBlock>
-            <ProgressBar x:Name="bogoSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,5,0,0" VerticalAlignment="Top" Width="178" Grid.Row="3" ValueChanged="ProgressBar_ValueChanged_2"/>
 
             <Button x:Name="all" Grid.Column="0" Grid.Row="8" Click="Button_Click">Run All</Button>
             <Label Grid.Column="1" Grid.Row="8" HorizontalAlignment="Right">Total Time:</Label>

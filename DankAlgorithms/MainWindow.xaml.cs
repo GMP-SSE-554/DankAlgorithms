@@ -16,8 +16,9 @@ namespace DankAlgorithms
     {
         const string RUNNING = "Running";
         const string COMPLETE = "Complete";
+        const string CANCELED = "CANCELED";
 
-        CancellationTokenSource _cts;
+        CancellationTokenSource _cts = new CancellationTokenSource();
 
         public int DatasetSize { get; set; }
 
@@ -58,7 +59,7 @@ namespace DankAlgorithms
                     iStatus.Text = RUNNING;
                     iSortRuntime.Content = string.Empty;
                     sw.Start();
-                    await InsertionSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100));
+                    await InsertionSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
                     sw.Stop();
                     iStatus.Text = COMPLETE;
                     iSortRuntime.Content = sw.Elapsed;
@@ -67,7 +68,7 @@ namespace DankAlgorithms
                     eoStatus.Text = RUNNING;
                     eoSortRuntime.Content = string.Empty;
                     sw.Start();
-                    await EvenOddSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100));
+                    await EvenOddSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
                     sw.Stop();
                     eoStatus.Text = COMPLETE;
                     eoSortRuntime.Content = sw.Elapsed;
@@ -82,7 +83,8 @@ namespace DankAlgorithms
                     eoStatus.Text = RUNNING;
                     allStatus.Text = RUNNING;
                     sw.Start();
-                    Task inSort = InsertionSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100));
+                    Task inSort = InsertionSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    Task eoSort = EvenOddSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
                     await inSort.ContinueWith(t =>
                      {
                          this.Dispatcher.Invoke(() =>
@@ -91,7 +93,6 @@ namespace DankAlgorithms
                              iStatus.Text = COMPLETE;
                          });
                      });
-                    Task eoSort = EvenOddSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100));
                     await eoSort.ContinueWith(t =>
                     {
                         this.Dispatcher.Invoke(() =>
@@ -107,6 +108,7 @@ namespace DankAlgorithms
                     break;
                 case "cancel":
                     _cts?.Cancel();
+                    _cts = new CancellationTokenSource();
                     break;
                 default:
                     break;
