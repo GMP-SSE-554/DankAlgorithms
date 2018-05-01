@@ -73,23 +73,81 @@ namespace DankAlgorithms
                     eoStatus.Text = COMPLETE;
                     eoSortRuntime.Content = sw.Elapsed;
                     break;
-                case "bogo":
+                case "arrayadd":
+                    arrayAddStatus.Text = RUNNING;
+                    arrayAddRuntime.Content = string.Empty;
+                    sw.Start();
+                    await ArrayAddition.AddArraysAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100),
+                        RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    sw.Stop();
+                    arrayAddStatus.Text = COMPLETE;
+                    arrayAddRuntime.Content = sw.Elapsed;
+                    break;
+                case "arraysum":
+                    arraySumStatus.Text = RUNNING;
+                    arraySumRuntime.Content = string.Empty;
+                    sw.Start();
+                    await ArraySum.SumAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    sw.Stop();
+                    arraySumStatus.Text = COMPLETE;
+                    arraySumRuntime.Content = sw.Elapsed;
+                    break;
+                case "parrayadd":
+                    pArrayAddStatus.Text = RUNNING;
+                    pArrayAddRuntime.Content = string.Empty;
+                    sw.Start();
+                    await ParallelArrayAddition.AddArraysAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100),
+                        RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    sw.Stop();
+                    pArrayAddStatus.Text = COMPLETE;
+                    pArrayAddRuntime.Content = sw.Elapsed;
+                    break;
+                case "psum":
+                    pSumStatus.Text = RUNNING;
+                    pSumRuntime.Content = string.Empty;
+                    sw.Start();
+                    await ParallelSum.SumAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    sw.Stop();
+                    pSumStatus.Text = COMPLETE;
+                    pSumRuntime.Content = sw.Elapsed;
+                    break;
+                case "reduct":
+                    reductStatus.Text = RUNNING;
+                    reductRuntime.Content = string.Empty;
+                    sw.Start();
+                    await ReductionSum.SumAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100));
+                    sw.Stop();
+                    reductStatus.Text = COMPLETE;
+                    reductRuntime.Content = sw.Elapsed;
                     break;
                 case "all":
                     iSortRuntime.Content = string.Empty;
                     eoSortRuntime.Content = string.Empty;
+                    arrayAddRuntime.Content = string.Empty;
+                    arraySumRuntime.Content = string.Empty;
+                    pArrayAddRuntime.Content = string.Empty;
+                    pSumRuntime.Content = string.Empty;
                     allRuntime.Content = string.Empty;
                     iStatus.Text = RUNNING;
                     eoStatus.Text = RUNNING;
+                    arrayAddStatus.Text = RUNNING;
+                    arraySumStatus.Text = RUNNING;
+                    pArrayAddStatus.Text = RUNNING;
+                    pSumStatus.Text = RUNNING;
                     allStatus.Text = RUNNING;
                     sw.Start();
                     Task inSort = InsertionSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
                     Task eoSort = EvenOddSort.SortAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    Task arrAdd = ArrayAddition.AddArraysAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100),
+                        RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    Task arrSum = ArraySum.SumAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    Task parAdd = ParallelArrayAddition.AddArraysAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100),
+                        RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
+                    Task parSum = ParallelSum.SumAsync(RandomArray.GetRandomArray(DatasetSize, 0, 100), _cts);
                     await inSort.ContinueWith(t =>
                      {
                          this.Dispatcher.Invoke(() =>
                          {
-                             iSortRuntime.Content = sw.Elapsed;
                              iStatus.Text = COMPLETE;
                          });
                      });
@@ -97,8 +155,35 @@ namespace DankAlgorithms
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            eoSortRuntime.Content = sw.Elapsed;
                             eoStatus.Text = COMPLETE;
+                        });
+                    });
+                    await arrAdd.ContinueWith(t =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            arrayAddStatus.Text = COMPLETE;
+                        });
+                    });
+                    await arrSum.ContinueWith(t =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            arraySumStatus.Text = COMPLETE;
+                        });
+                    });
+                    await parAdd.ContinueWith(t =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            pArrayAddStatus.Text = COMPLETE;
+                        });
+                    });
+                    await parSum.ContinueWith(t =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            pSumStatus.Text = COMPLETE;
                         });
                     });
                     await Task.WhenAll(inSort, eoSort);

@@ -47,6 +47,36 @@
             <TextBlock x:Name="eoStatus" Grid.Column="4" Grid.Row="2" VerticalAlignment="Center">Not yet run</TextBlock>
             <ProgressBar x:Name="evenOddSortProg" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="10,6,0,0" VerticalAlignment="Top" Width="178" Grid.Row="2" ValueChanged="ProgressBar_ValueChanged_2"/>
 
+            <Button x:Name="arrayadd" Grid.Column="0" Grid.Row="3" Click="Button_Click">Array Addition</Button>
+            <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="arrayAddRuntime" Grid.Column="2" Grid.Row="3"/>
+            <Label Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock x:Name="arrayAddStatus" Grid.Column="4" Grid.Row="3" VerticalAlignment="Center">Not yet run</TextBlock>
+
+            <Button x:Name="arraysum" Grid.Column="0" Grid.Row="4" Click="Button_Click">Array Sum</Button>
+            <Label Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="arraySumRuntime" Grid.Column="2" Grid.Row="4"/>
+            <Label Grid.Column="3" Grid.Row="4" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock x:Name="arraySumStatus" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center">Not yet run</TextBlock>
+
+            <Button x:Name="parrayadd" Grid.Column="0" Grid.Row="5" Click="Button_Click">P Array Addition</Button>
+            <Label Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="pArrayAddRuntime" Grid.Column="2" Grid.Row="5"/>
+            <Label Grid.Column="3" Grid.Row="5" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock x:Name="pArrayAddStatus" Grid.Column="4" Grid.Row="5" VerticalAlignment="Center">Not yet run</TextBlock>
+
+            <Button x:Name="psum" Grid.Column="0" Grid.Row="6" Click="Button_Click">P Sum</Button>
+            <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="pSumRuntime" Grid.Column="2" Grid.Row="6"/>
+            <Label Grid.Column="3" Grid.Row="6" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock x:Name="pSumStatus" Grid.Column="4" Grid.Row="6" VerticalAlignment="Center">Not yet run</TextBlock>
+
+            <Button x:Name="reduct" Grid.Column="0" Grid.Row="7" Click="Button_Click">Recuct Sum</Button>
+            <Label Grid.Column="1" Grid.Row="7" HorizontalAlignment="Right">Total Time:</Label>
+            <Label x:Name="reductRuntime" Grid.Column="2" Grid.Row="7"/>
+            <Label Grid.Column="3" Grid.Row="7" HorizontalAlignment="Right">Status:</Label>
+            <TextBlock x:Name="reductStatus" Grid.Column="4" Grid.Row="7" VerticalAlignment="Center">Not yet run</TextBlock>
+
             <Button x:Name="all" Grid.Column="0" Grid.Row="8" Click="Button_Click">Run All</Button>
             <Label Grid.Column="1" Grid.Row="8" HorizontalAlignment="Right">Total Time:</Label>
             <Label x:Name="allRuntime" Grid.Column="2" Grid.Row="8"/>
