@@ -6,7 +6,7 @@ namespace DankAlgorithms.Algorithms
     public class EvenOddSort
     {
         CancellationTokenSource _cts;
-
+        static int progress;
         /// <summary>
         /// Returns asyncronous sorting task.
         /// </summary>
@@ -26,6 +26,7 @@ namespace DankAlgorithms.Algorithms
         /// <param name="array">The array.</param>
         public static int[] Sort(int[] array)
         {
+            progress = 0;
             int i, j, tmp, size = array.Length;
             int[] copy = new int[size];
             array.CopyTo(copy, 0);
@@ -55,6 +56,7 @@ namespace DankAlgorithms.Algorithms
                         }
                     }
                 }
+                progress++;
             }
             return copy;
         }

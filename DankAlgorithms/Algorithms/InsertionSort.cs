@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace DankAlgorithms.Algorithms
 {
     public class InsertionSort
     {
+        static double progress;
         /// <summary>
         /// Returns asyncronous sorting task.
         /// </summary>
@@ -17,6 +19,13 @@ namespace DankAlgorithms.Algorithms
             });
         }
 
+        public static int getProgress()
+        {
+            return (int)progress;
+        }
+
+        public static event EventHandler<ProgressEvent> OnProgress;
+
         /// <summary>
         /// Sorts the specified input array.
         /// </summary>
@@ -24,6 +33,7 @@ namespace DankAlgorithms.Algorithms
         /// <returns></returns>
         public static int[] Sort(int[] inputArray)
         {
+            progress = 0;
             //Create a copy of inputArray
             int[] copiedArray = new int[inputArray.Length];
             inputArray.CopyTo(copiedArray, 0);
@@ -41,9 +51,16 @@ namespace DankAlgorithms.Algorithms
                 }
 
                 copiedArray[j + 1] = key;
+                EventHandler<ProgressEvent> progressEvent = OnProgress;
+                if (progressEvent != null)
+                {
+                    progressEvent(null, new ProgressEvent(null, (int)progress));
+                }
             }
 
             return copiedArray;
         }
+
+        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DankAlgorithms.Algorithms;
 using DankAlgorithms.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
@@ -16,6 +17,7 @@ namespace DankAlgorithms
     {
         const string RUNNING = "Running";
         const string COMPLETE = "Complete";
+        
 
         CancellationTokenSource _cts;
 
@@ -29,6 +31,13 @@ namespace DankAlgorithms
             InitializeComponent();
             AddDataSetSizes();
             DataContext = this;
+            InsertionSort.OnProgress += OnProgress;
+        }
+
+        public void OnProgress(object sender, ProgressEvent args)
+        {
+            
+                
         }
 
         private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
