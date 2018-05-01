@@ -1,8 +1,22 @@
-﻿
+﻿using System.Threading.Tasks;
+
 namespace DankAlgorithms.Algorithms
 {
     public class InsertionSort
     {
+        /// <summary>
+        /// Returns asyncronous sorting task.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <returns></returns>
+        public static Task SortAsync(int[] array)
+        {
+            return Task.Run(() =>
+            {
+                return Sort(array);
+            });
+        }
+
         /// <summary>
         /// Sorts the specified input array.
         /// </summary>
