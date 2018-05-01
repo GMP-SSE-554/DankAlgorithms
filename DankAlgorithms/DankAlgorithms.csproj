@@ -54,8 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Algorithms\ArrayAddition.cs" />
+    <Compile Include="Algorithms\ArraySum.cs" />
     <Compile Include="Algorithms\BogoSort.cs" />
     <Compile Include="Algorithms\InsertionSort.cs" />
+    <Compile Include="Algorithms\ParallelArrayAddition.cs" />
+    <Compile Include="Algorithms\ParallelSum.cs" />
+    <Compile Include="Algorithms\ReductionSum.cs" />
     <Compile Include="BindableBase.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Utilities\ArrayUtils.cs" />
