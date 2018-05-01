@@ -32,21 +32,6 @@ namespace DankAlgorithms
             DataContext = this;
         }
 
-        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
-        private void ProgressBar_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
-        private void ProgressBar_ValueChanged_2(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
